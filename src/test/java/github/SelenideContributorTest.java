@@ -22,7 +22,7 @@ public class SelenideContributorTest {
         open("https://github.com/selenide/selenide");
 
         // Навести мышь на первого контрибьютора
-        $$(".Layout-sidebar .BorderGrid-row").filterBy(text("Contributors")).first().$("li").hover();
+        $$(".Layout-sidebar .BorderGrid-row").find(text("Contributors")).$("li").hover();
 
         // Проверить, что это Андрей Солнцев
         $(".Popover")
