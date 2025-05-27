@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverConditions.url;
 
 public class SearchSelenideRepoTest {
 
@@ -37,6 +38,8 @@ public class SearchSelenideRepoTest {
         $("[itemprop='name'] a")
                 .shouldHave(exactText("selenide"))
                 .shouldHave(attribute("href", "https://github.com/selenide/selenide"));
+
+        webdriver().shouldHave(url("https://github.com/selenide/selenide"));
 
     }
 }
